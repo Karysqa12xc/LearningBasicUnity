@@ -11,3 +11,12 @@ memorize before attempting to write a script?
 2. What role do methods play in scripts?
 3. How does a script become a component?
 4. What is the purpose of dot notation?
+# Pop quiz – variables and methods(Chap 3)
+1. What is the proper way to write a variable name in C#?
+2. How do you make a variable appear in Unity's Inspector window?
+3. What are the four access modifiers available in C#?
+4. When are explicit conversions needed between types?
+5. What are the minimum requirements for defining a method?
+6. What is the purpose of the parentheses at the end of the method name?
+7. What does a return type of void mean in a method definition?
+8. How often is the Update() method called by Unity? 
