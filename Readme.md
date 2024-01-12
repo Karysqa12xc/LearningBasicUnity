@@ -20,3 +20,10 @@ memorize before attempting to write a script?
 6. What is the purpose of the parentheses at the end of the method name?
 7. What does a return type of void mean in a method definition?
 8. How often is the Update() method called by Unity? 
+# Pop quiz 1 – if, and, or but(Chap 4)
+1. What values are used to evaluate if statements?
+2. Which operator can turn a true condition false or a false condition true?
+3. If two conditions need to be true for an if statement's code to execute, what 
+logical operator would you use to join the conditions?
+4. If only one of two conditions needs to be true to execute an if statement's 
+code, what logical operator would you use to join the two conditions?
