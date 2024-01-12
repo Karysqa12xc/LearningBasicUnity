@@ -5,142 +5,44 @@ using UnityEngine;
 
 public class LearningCurve : MonoBehaviour
 {
-    private int CurrentAge = 30;
-    public int AddAge = 1;
-    public float Pi = 3.14f;
-    public string FirstName = "Nam";
-    public bool IsAuthor = false;
-    public bool hasDungeonKey = false;
-    public bool weaponEquipped = true;
-    public int CurrentGold = 32;
-    public string weaponType = "Arcane Staff";
-    public bool PureOfHeart = true;
-    public bool HasSecretIncantation = false;
-    public string RareItem = "Relic Stone";
-    string CharacterAttack = "Attack";
-    int DiceRoll = 7;
+    int[] topPlayerScores = { 713, 549, 984 };
+
+    int score;
     // Start is called before the first frame update
     void Start()
     {
-        if (hasDungeonKey)
-        {
-            Debug.Log("You process the sacred key - enter.");
-        }
-        else
-        {
-            Debug.Log("You have not proved yourself yet.");
-        }
-        Thievery();
-        if (!hasDungeonKey)
-        {
-            Debug.Log("You may not enter without the sacred key");
-        }
-        if (weaponType != "LongSword")
-        {
-            Debug.Log("You don't appear to have the right type of weapon...");
-        }
-        if (weaponEquipped)
-        {
-            if (weaponType == "LongSword")
-            {
-                Debug.Log("For the queen!");
-            }
-        }
-        else
-        {
-            Debug.Log("Fists aren't going to work against armor...");
-        }
-        OpenTreasureChamber();
-        PrintCharacterAction();
-        RollDice();
+        score = topPlayerScores.Length;
+        List<string> QuestPartyMember =
+        new List<string>(){
+            "Grim the Barbarian",
+            "Merlin the Wise",
+            "Sterling the Knight"
+        };
+        QuestPartyMember.Add("Craven the Necromancer");
+        QuestPartyMember.Insert(1, "Tanis the Thief");
+        Debug.LogFormat("Party Members: {0}",
+            QuestPartyMember.Count);
+        QuestPartyMember.RemoveAt(0);
+        Debug.LogFormat("Party Members: {0}",
+           QuestPartyMember.Count);
+        ItemInventory();
     }
-    /// <summary>
-    /// Time to action - adding comments
-    /// Computer a modified age integer
-    /// </summary>
-    void ComputeAge()
+    public void ItemInventory()
     {
-        Debug.Log(CurrentAge + AddAge);
-        Debug.LogFormat($"Text goes here, add {CurrentAge}");
-    }
-    /// <summary>
-    /// Test declare method
-    /// </summary>
-    public void GenerateCharacter()
-    {
-        Debug.Log("Character: Spike");
-    }
-    public int GenerateCharacter(string name, int level)
-    {
-        // Debug.LogFormat("Character: {0} - Level: {1}"
-        // , name, level);
-        return level += 5;
-    }
-    public void Thievery()
-    {
-        if (CurrentGold > 50)
+        Dictionary<string, int> ItemInventory = new Dictionary<string, int>()
         {
-            Debug.Log("You're rolling in it!");
+            {"Potion", 5},
+            {"Antidote", 7},
+            {"Aspirin", 1}
+        };
+        ItemInventory.Add("Throwing Knife", 3);
+        Debug.LogFormat("Items: {0}", ItemInventory.Count);    
+        int numberOfPotions = ItemInventory["Potion"];
+        Debug.LogFormat("Numbers of Potions: {0}", numberOfPotions); 
+        if(ItemInventory.ContainsKey("Aspirin")){
+            ItemInventory["Aspirin"] = 3;
         }
-        else if (CurrentGold < 15)
-        {
-            Debug.Log("Not ,ucj there to steal...");
-        }
-        else
-        {
-            Debug.Log("Looks like your purse is in the sweet spot.");
-        }
-
-    }
-    public void OpenTreasureChamber()
-    {
-        if (PureOfHeart && RareItem == "Relic Stone")
-        {
-            if (!HasSecretIncantation)
-            {
-                Debug.Log("You have the spirit, but not the knowledge.");
-            }
-            else
-            {
-                Debug.Log("The treasure is yours, worthy hero!");
-            }
-        }
-        else
-        {
-            Debug.Log("Come back when you have what it takes.");
-        }
-
-    }
-    public void PrintCharacterAction()
-    {
-        switch (CharacterAttack)
-        {
-            case "Heal":
-                Debug.Log("Point sent");
-                break;
-            case "Attack":
-                Debug.Log("To arms");
-                break;
-            default:
-                Debug.Log("Shields up");
-                break;
-        }
-    }
-    public void RollDice()
-    {
-        switch (DiceRoll)
-        {
-            case 7:
-            case 15:
-                Debug.Log("Mediocre damage, not bad.");
-                break;
-            case 20: 
-                Debug.Log("Critical hit, the creature goes down!");
-                break;
-            default:
-                Debug.Log("You completely missed and fell on your face.");
-                break;
-        }
+        ItemInventory.Remove("AntiDote");
     }
     // Update is called once per frame
     void Update()

@@ -27,3 +27,8 @@ memorize before attempting to write a script?
 logical operator would you use to join the conditions?
 4. If only one of two conditions needs to be true to execute an if statement's 
 code, what logical operator would you use to join the two conditions?
+# Pop quiz 2 – all about collections(Chap 4)
+1. What is an element in an array or list?
+2. What is the index number of the first element in an array or list?
+3. Can a single array or list store different types of data?
+4. How can you add more elements to an array to make room for more data? 
