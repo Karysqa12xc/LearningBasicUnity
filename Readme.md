@@ -32,3 +32,9 @@ code, what logical operator would you use to join the two conditions?
 2. What is the index number of the first element in an array or list?
 3. Can a single array or list store different types of data?
 4. How can you add more elements to an array to make room for more data? 
+# Pop quiz – all things OOP (Chap 5)
+1. What method handles the initialization logic inside a class?
+2. Being value types, how are structs passed?
+3.  What are the main tenets of OOP?
+4. Which GameObject class method would you use to find a component on the 
+same object as the calling class?
