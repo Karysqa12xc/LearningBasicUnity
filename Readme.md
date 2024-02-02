@@ -38,3 +38,10 @@ code, what logical operator would you use to join the two conditions?
 3.  What are the main tenets of OOP?
 4. Which GameObject class method would you use to find a component on the 
 same object as the calling class?
+# Pop quiz – basic Unity features
+1. Cubes, capsules, and spheres are examples of what kind of GameObject?
+2.What axis does Unity use to represent depth, which gives scenes their 3D 
+appearance? 
+3. How do you turn a GameObject into a reusable Prefab?
+4. What unit of measurement does the Unity animation system use to record 
+object animations?
