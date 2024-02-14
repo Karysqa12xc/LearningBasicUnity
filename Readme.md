@@ -45,3 +45,11 @@ appearance?
 3. How do you turn a GameObject into a reusable Prefab?
 4. What unit of measurement does the Unity animation system use to record 
 object animations?
+# Pop quiz – player controls and physics(Chapter 7)
+1. What data type would you use to store 3D movement and rotation 
+information?
+2. What built-in Unity component allows you to track and modify player 
+controls?
+3. Which component adds real-world physics to a GameObject?
+4. What method does Unity suggest using to execute physics-related code on 
+GameObjects?
