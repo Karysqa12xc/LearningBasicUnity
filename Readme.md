@@ -53,3 +53,10 @@ controls?
 3. Which component adds real-world physics to a GameObject?
 4. What method does Unity suggest using to execute physics-related code on 
 GameObjects?
+# Pop quiz – working with mechanics(Chapter 8)
+1. What type of data do enumerations store?
+2. How would you create a copy of a Prefab GameObject in an active scene?
+3. Which variable properties allow you to add functionality when their value is 
+referenced or modified?
+4. Which Unity method displays all UI objects in the scene?
+
