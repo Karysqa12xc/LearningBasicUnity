@@ -19,10 +19,13 @@ public class PlayerBehavior : MonoBehaviour
     private float _vInput;
     private float _hInput;
     private Rigidbody _rb;
+    private GameBehavior _gameManager;
     void Start()
     {
         _rb = this.GetComponent<Rigidbody>();
         _col = this.GetComponent<CapsuleCollider>();
+        _gameManager = GameObject.Find("Game_Manager")
+        .GetComponent<GameBehavior>();
     }
     // Update is called once per frame
     void Update()
@@ -39,7 +42,7 @@ public class PlayerBehavior : MonoBehaviour
     {
         Vector3 rotation = Vector3.up * _hInput;
         Quaternion angleRot = Quaternion.Euler(rotation * Time.fixedDeltaTime);
-        _rb.MovePosition(this.transform.position + this.transform.forward * _vInput * Time.fixedDeltaTime);
+        _rb.MovePosition(this.transform.position + (this.transform.forward * _vInput * Time.fixedDeltaTime));
         _rb.MoveRotation(_rb.rotation * angleRot);
         if (IsGrounded() && _isJump)
         {
@@ -51,12 +54,19 @@ public class PlayerBehavior : MonoBehaviour
         {
             GameObject newBullet = Instantiate(
             Bullet
-            , this.transform.position + new Vector3(1, 0 , 0)
+            , this.transform.position + new Vector3(1, 0, 0)
             , this.transform.rotation);
             Rigidbody BulletRB = newBullet.GetComponent<Rigidbody>();
             BulletRB.velocity = this.transform.forward * BulletSpeed;
         }
         _isShooting = false;
+    }
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.name == "Enemy")
+        {
+            _gameManager.HP -= 1;
+        }
     }
     private bool IsGrounded()
     {

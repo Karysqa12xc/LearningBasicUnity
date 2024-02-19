@@ -9,12 +9,12 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7535230582200705366}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Raised_Platform
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &7535230582200705366
 Transform:
@@ -48,12 +48,12 @@ GameObject:
   - component: {fileID: 7535230582267073672}
   - component: {fileID: 7535230582267073673}
   - component: {fileID: 7535230582267073674}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Plane (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &7535230582267073675
 Transform:
@@ -146,12 +146,12 @@ GameObject:
   - component: {fileID: 7535230582744182264}
   - component: {fileID: 7535230582744182265}
   - component: {fileID: 7535230582744182266}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Plane (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &7535230582744182267
 Transform:
@@ -244,12 +244,12 @@ GameObject:
   - component: {fileID: 7535230583041886460}
   - component: {fileID: 7535230583041886461}
   - component: {fileID: 7535230583041886462}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Plane (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &7535230583041886463
 Transform:
@@ -342,12 +342,12 @@ GameObject:
   - component: {fileID: 7535230583630365371}
   - component: {fileID: 7535230583630365364}
   - component: {fileID: 7535230583630365365}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Plane
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &7535230583630365366
 Transform:
@@ -440,12 +440,12 @@ GameObject:
   - component: {fileID: 7535230583972998100}
   - component: {fileID: 7535230583972998101}
   - component: {fileID: 7535230583972998102}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &7535230583972998103
 Transform:
