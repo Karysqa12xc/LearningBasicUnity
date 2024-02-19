@@ -59,4 +59,9 @@ GameObjects?
 3. Which variable properties allow you to add functionality when their value is 
 referenced or modified?
 4. Which Unity method displays all UI objects in the scene?
-
+# Pop quiz – AI and navigation(Chapter 9)
+1. How is a NavMesh component created in a Unity scene?
+2. What component identifies a GameObject to a NavMesh?
+3. Executing the same logic on one or more sequential objects is an example of 
+which programming technique?
+4. What does the DRY acronym stand for?
