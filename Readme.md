@@ -65,3 +65,9 @@ referenced or modified?
 3. Executing the same logic on one or more sequential objects is an example of 
 which programming technique?
 4. What does the DRY acronym stand for?
+# Pop quiz – leveling up (Chapter 10)
+1. Which keyword would mark a variable as unmodifiable but requires an 
+initial value?
+2. How would you create an overloaded version of a base method?
+3. What is the main difference between classes and interfaces?
+4. How would you solve a namespace conflict in one of your classes?
