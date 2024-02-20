@@ -5,11 +5,14 @@ using UnityEngine;
 using UnityEditor.Experimental.GraphView;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
-public class GameBehavior : MonoBehaviour
+using CustomExtensions;
+public class GameBehavior : MonoBehaviour, IManger
 {
     private int _ItemCollect = 0;
     private float _playerHP = 10f;
     public int MaxItems = 4;
+    private string _state;
+    private string _testTxt;
     public Text HealthText;
     public Text ItemText;
     public Text ProgressText;
@@ -19,6 +22,7 @@ public class GameBehavior : MonoBehaviour
     {
         ItemText.text += _ItemCollect;
         HealthText.text += _playerHP;
+        Initialize();
     }
     public int Items
     {
@@ -63,14 +67,27 @@ public class GameBehavior : MonoBehaviour
             }
         }
     }
+
+    public string State
+    {
+        get { return _state; }
+        set { _state = value; }
+    }
+
     public void RestartGame()
     {
-        SceneManager.LoadScene(0);
-        Time.timeScale = 1f;
+        Utilities.RestartLevel(0);
     }
     public void UpdateScene(string updateText)
     {
         ProgressText.text = updateText;
         Time.timeScale = 0f;
+    }
+
+    public void Initialize()
+    {
+        _state = "Game Manager initialize";
+        _state.FancyDebug();
+        Debug.Log(_state);
     }
 }

@@ -15,8 +15,8 @@ public class LearningCurve : MonoBehaviour
         // LightTransform = GameObject
         //                 .Find("Directional Light")
         //                 .GetComponent<Transform>();
-        Debug.Log(LightTransform.localPosition);
-        Debug.Log(CamTransform.localPosition);
+        // Debug.Log(LightTransform.localPosition);
+        // Debug.Log(CamTransform.localPosition);
         // Character hero = new Character();
         // Character hero2 = hero;
         // hero2.Name = "Vua không xương";
