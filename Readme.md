@@ -77,3 +77,9 @@ initial value?
 it?
 3. Can stacks and queues store null values?
 4. How would you subtract one HashSet from another?
+# Pop quiz – data management (Chapter 12)
+1. Which namespace gives you access to the Path and Directory classes?
+2. In Unity, what folder path do you use to save data between runs of your 
+game?
+3. What data type do Stream objects use to read and write information to files?
+4. What happens when you serialize an object into JSON?
