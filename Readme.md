@@ -71,3 +71,9 @@ initial value?
 2. How would you create an overloaded version of a base method?
 3. What is the main difference between classes and interfaces?
 4. How would you solve a namespace conflict in one of your classes?
+# Pop quiz - intermediate collections (Chapter 11)
+1. Which collection type stores its elements using the LIFO model
+2. Which method lets you query the next element in a stack without removing 
+it?
+3. Can stacks and queues store null values?
+4. How would you subtract one HashSet from another?

@@ -10,14 +10,20 @@ public class GameBehavior : MonoBehaviour, IManger
 {
     private int _ItemCollect = 0;
     private float _playerHP = 10f;
-    public int MaxItems = 4;
     private string _state;
-    private string _testTxt;
+    public int MaxItems = 4;
     public Text HealthText;
     public Text ItemText;
     public Text ProgressText;
     public Button WinButton;
     public Button LossButton;
+    public Stack<string> LootStack = new Stack<string>();
+    public Queue<string> activePlayers = new Queue<string>();
+    public HashSet<string> people = new HashSet<string>(){
+        "Joe",
+        "Joan",
+        "Hank",
+    };
     void Start()
     {
         ItemText.text += _ItemCollect;
@@ -89,5 +95,25 @@ public class GameBehavior : MonoBehaviour, IManger
         _state = "Game Manager initialize";
         _state.FancyDebug();
         Debug.Log(_state);
+        //? Stack
+        LootStack.Push("Sword of Doom");
+        LootStack.Push("HP Boost");
+        LootStack.Push("Golden Key");
+        LootStack.Push("Pair of Winged Boots");
+        LootStack.Push("Mythril Bracer");
+        //? Queue
+        activePlayers.Enqueue("Harrison");
+        activePlayers.Enqueue("Alex");
+        activePlayers.Enqueue("Haley");
+    }
+    public void PrintLootReport()
+    {
+        var currentItem = LootStack.Pop();
+        var nextItem = LootStack.Peek();
+        var firstPlayer = activePlayers.Peek();
+        var getPlayer = activePlayers.Dequeue();
+        Debug.LogFormat("The first player is {0} and we take it out of queue {1}", firstPlayer, getPlayer);
+        Debug.LogFormat("You got a {0}! You've got a good chance of finding a {1} next!", currentItem, nextItem);
+        Debug.LogFormat("There are {0} random loot items waiting for you", LootStack.Count);
     }
 }

@@ -17,6 +17,7 @@ public class ItemBehaviour : MonoBehaviour
             Destroy(this.transform.gameObject);
             Debug.Log("Item Collection");
             GameManager.Items += 1;
+            GameManager.PrintLootReport();
         }
     }
     
