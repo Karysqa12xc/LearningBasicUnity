@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using System;
 public static class Utilities
 {
     public static int PlayerDeaths = 0;
@@ -16,6 +17,9 @@ public static class Utilities
         Time.timeScale = 1.0f;
     }
     public static bool RestartLevel(int sceneIndex){
+        if(sceneIndex < 0){
+            throw new ArgumentException("Scene index cannot be negative");
+        }
         Debug.Log("Player deaths: " + PlayerDeaths);
         string message = UpdateDeathCount(out PlayerDeaths);
         Debug.Log("Player deaths: " + PlayerDeaths);

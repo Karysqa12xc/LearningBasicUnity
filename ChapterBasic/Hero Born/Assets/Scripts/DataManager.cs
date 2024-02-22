@@ -44,9 +44,9 @@ public class DataManager : MonoBehaviour, IManger
     {
         _state = "Data Manager initialize";
         Debug.Log(_state);
-        NewDirectory();
-        SerializeJSON();
-        DeserializeJSON();
+        // NewDirectory();
+        // SerializeJSON();
+        // DeserializeJSON();
         // SerializeXML();
         // DeserializeXML();
         // NewTextFile();

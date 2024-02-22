@@ -83,3 +83,9 @@ it?
 game?
 3. What data type do Stream objects use to read and write information to files?
 4. What happens when you serialize an object into JSON?
+# Pop quiz – intermediate C# (Chapter 13)
+1. What is the difference between a generic and non-generic class?
+2. What needs to match when assigning a value to a delegate type?
+3. How would you unsubscribe from an event?
+4. Which C# keyword would you use to send out an exception in your code?
+

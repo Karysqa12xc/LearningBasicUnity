@@ -6,6 +6,8 @@ using UnityEditor.Experimental.GraphView;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using CustomExtensions;
+using UnityEngine.XR;
+using System;
 public class GameBehavior : MonoBehaviour, IManger
 {
     private int _ItemCollect = 0;
@@ -24,6 +26,26 @@ public class GameBehavior : MonoBehaviour, IManger
         "Joan",
         "Hank",
     };
+    public delegate void DebugDelegate(string newText);
+
+    public DebugDelegate debug = Print;
+
+    public PlayerBehavior playerBehavior;
+
+    void OnEnable()
+    {
+        GameObject player = GameObject.Find("Player");
+
+        playerBehavior = player.GetComponent<PlayerBehavior>();
+
+        playerBehavior.playerJump += HandlePLayerJump;
+        debug("Jump event subscribed");
+    }
+    void OnDisable()
+    {
+        playerBehavior.playerJump -= HandlePLayerJump;
+        debug("Jump event unsubscribed...");
+    }
     void Start()
     {
         ItemText.text += _ItemCollect;
@@ -82,7 +104,20 @@ public class GameBehavior : MonoBehaviour, IManger
 
     public void RestartGame()
     {
-        Utilities.RestartLevel(0);
+        try
+        {
+            Utilities.RestartLevel(0);
+            debug("Level successfully restarted...");
+        }
+        catch (ArgumentException ex)
+        {
+            Utilities.RestartLevel(-1);
+            debug("Reverting to scene 0: " + ex.ToString());
+        }
+        finally
+        {
+            debug("Level restart has completed...");
+        }
     }
     public void UpdateScene(string updateText)
     {
@@ -94,7 +129,9 @@ public class GameBehavior : MonoBehaviour, IManger
     {
         _state = "Game Manager initialize";
         _state.FancyDebug();
-        Debug.Log(_state);
+        // Debug.Log(_state);
+        debug(_state);
+        LogWithDelegate(debug);
         //? Stack
         LootStack.Push("Sword of Doom");
         LootStack.Push("HP Boost");
@@ -105,6 +142,12 @@ public class GameBehavior : MonoBehaviour, IManger
         activePlayers.Enqueue("Harrison");
         activePlayers.Enqueue("Alex");
         activePlayers.Enqueue("Haley");
+
+        var itemShop = new Shop<Collectable>();
+        itemShop.AddItem(new Potion());
+        itemShop.AddItem(new Antidote());
+        Debug.Log("There are " + itemShop.GetStockCount<Potion>() +
+            " items for sale.");
     }
     public void PrintLootReport()
     {
@@ -115,5 +158,18 @@ public class GameBehavior : MonoBehaviour, IManger
         Debug.LogFormat("The first player is {0} and we take it out of queue {1}", firstPlayer, getPlayer);
         Debug.LogFormat("You got a {0}! You've got a good chance of finding a {1} next!", currentItem, nextItem);
         Debug.LogFormat("There are {0} random loot items waiting for you", LootStack.Count);
+    }
+    public static void Print(string newText)
+    {
+        Debug.Log(newText);
+    }
+    public void LogWithDelegate(DebugDelegate del)
+    {
+        del("Delegate the debug task...");
+    }
+
+    public void HandlePLayerJump()
+    {
+        debug("Player has jumped...");
     }
 }

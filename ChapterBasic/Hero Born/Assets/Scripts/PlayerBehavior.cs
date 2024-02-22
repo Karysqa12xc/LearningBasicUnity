@@ -15,6 +15,8 @@ public class PlayerBehavior : MonoBehaviour
     private CapsuleCollider _col;
     public GameObject Bullet;
     public float BulletSpeed = 100;
+    public delegate void JumpingEvent();
+    public event JumpingEvent playerJump;
     private bool _isShooting;
     private float _vInput;
     private float _hInput;
@@ -47,7 +49,7 @@ public class PlayerBehavior : MonoBehaviour
         if (IsGrounded() && _isJump)
         {
             _rb.AddForce(Vector3.up * JumpVelocity, ForceMode.Impulse);
-
+            playerJump();
         }
         _isJump = false;
         if (_isShooting)
